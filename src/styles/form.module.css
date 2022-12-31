@@ -1,0 +1,39 @@
+.form_main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input_group{
+    display: flex;
+    flex-direction: column;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions button{
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+
+.actions button:hover{
+    border: 1px solid gray
+}
+.error{
+    color: red;
+}
+.label_wrapper{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.form_main_wrapper{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

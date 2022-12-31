@@ -1,0 +1,9 @@
+.steps_wrapper{
+    display: flex;
+    gap: 20px;
+}
+.steps_wrapper button{
+    border: none;
+    border-radius: 4px;
+    padding: .7rem;
+}
