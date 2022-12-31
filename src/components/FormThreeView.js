@@ -46,15 +46,6 @@ const FormThreeView = forwardRef((props, ref) => {
     dispatch({ type: 'COMPLETE', id: 2, show: false, next: 2 });
   };
 
-  useImperativeHandle(
-    ref,
-    () => ({
-      handleBack,
-      onSubmit,
-    }),
-    [],
-  );
-
   const onSubmit = type => {
     const { countryCode, tc, phoneNumber } = formList[2]?.data;
 
@@ -93,6 +84,15 @@ const FormThreeView = forwardRef((props, ref) => {
       if (type === Constants.SAVE_AND_NEXT) navigate('/posts');
     }
   };
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      handleBack,
+      onSubmit,
+    }),
+    [],
+  );
 
   const { countryCode, tc, phoneNumber } = formList[2]?.data;
 
