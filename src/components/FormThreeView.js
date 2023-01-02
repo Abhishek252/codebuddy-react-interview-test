@@ -46,6 +46,23 @@ const FormThreeView = forwardRef((props, ref) => {
     dispatch({ type: 'COMPLETE', id: 2, show: false, next: 2 });
   };
 
+  const onSubmitSuccess = () => {
+    console.log('successfully submitted');
+  };
+
+  const onSubmitFailure = err => {
+    console.log('Error occured => ', err);
+  };
+
+  const xhrSubmitRequest = async () => {
+    const url = `${process.env.REACT_APP_API_URL}/submit`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => onSubmitSuccess(data))
+      .catch(err => onSubmitFailure(err));
+  };
+
   const onSubmit = type => {
     const { countryCode, tc, phoneNumber } = formList[2]?.data;
 
@@ -81,6 +98,7 @@ const FormThreeView = forwardRef((props, ref) => {
         });
       }
 
+      xhrSubmitRequest();
       if (type === Constants.SAVE_AND_NEXT) navigate('/posts');
     }
   };
